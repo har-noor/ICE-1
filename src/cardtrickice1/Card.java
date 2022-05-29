@@ -19,7 +19,7 @@ public class Card
     //constant
     public static final String [] SUITS = {"diamonds","clubs","spades","hearts"};
     
-}
+
 
     /**
      * @return the value
@@ -75,9 +75,11 @@ public class Card
             cardSuit = "Spades";
             break;
         default :
-        cardSuit = "Enter a valid number";
+            cardSuit = "Enter a valid number";
             break;
         
-        return cardSuit;
+        
         }
+        return cardSuit;
+     }
 }
