@@ -10,6 +10,8 @@ package cardtrickice1;
  * step 3: user card is in  the array 'card is found'
  *
  * @author sivagamasrinivasan,May 23rd
+ * modifier: Harnoor Kaur (Student ID: 991662978)
+ * Date modified: May 29, 2022
  */
 public class CardTrickICE1 {
 
@@ -22,8 +24,9 @@ public class CardTrickICE1 {
         for( int i=0;i<magicHand.length;i++)
         {
             Card c1 = new Card();
-            c1.setValue(2);//use a method to generate random *13
-            c1.setSuits("hearts");//random method suit 
+            c1.setValue(selectRandomCardNumber());//use a method to generate random *13
+            c1.setSuits(selectRandomCardSuit());//random method suit 
+        magicHand[i] = c1;
         }
         //step 2:take input 
         
