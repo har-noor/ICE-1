@@ -9,13 +9,17 @@ package cardtrickice1;
  * 
  *
  * @author sivagamasrinivasan
+ * modifier: Harnoor Kaur (Student ID: 991662978)
+ * Date modified: May 29, 2022
  */
 public class Card 
 {
     private int value;
     private String suits; //encapsulation
     //constant
-    public static final String [] SUITS = { "diamonds","clubs","spades","hearts"};
+    public static final String [] SUITS = {"diamonds","clubs","spades","hearts"};
+    
+}
 
     /**
      * @return the value
@@ -44,8 +48,36 @@ public class Card
     public void setSuits(String suits) {
         this.suits = suits;
     }
+        
+        
    //number
+    private int selectRandomCardNumber()   {
+        int cardNumber = (int) (Math.random() * 13);
+        return cardNumber;
+        }
+        
     
     //method for suits
-    
+     private String selectRandomCardSuit() {
+        String cardSuit;
+        int s = (int) (Math.random() * 4);
+        switch (s) {
+        case 1:
+            cardSuit = "Clubs";
+            break;
+        case 2:
+            cardSuit = "Diamonds";
+            break;
+        case 3:
+            cardSuit = "Hearts";
+            break;
+        case 4 :
+            cardSuit = "Spades";
+            break;
+        default :
+        cardSuit = "Enter a valid number";
+            break;
+        
+        return cardSuit;
+        }
 }
