@@ -23,16 +23,19 @@ public class CardTrickICE1 {
     {
         Card[] magicHand = new Card[7]; //Array of object
         
-        
+        Random intNum = new Random();//Random class
+        System.out.println("CARDS IN THE MAGIC HAND:- ");
         
         for( int i=0; i<magicHand.length; i++)
         {
             Card c1 = new Card();
             
-            c1.setValue(c1.selectRandomCardNumber()); //use a method to generate random *13
-            c1.setSuits(c1.selectRandomCardSuit(args));//random method suit 
+            c1.setValue(intNum.nextInt(13) + 1); //method to generate random number
+            c1.setSuits(Card.SUITS[intNum.nextInt(4)]);//random method for suit 
             
             magicHand[i] = c1;
+            
+            System.out.println(c1);
         }
         //step 2:take input 
         Scanner input = new Scanner(System.in);
@@ -40,36 +43,21 @@ public class CardTrickICE1 {
         System.out.println("---------------");
         System.out.println("Enter a card number between 1 - 13");
         int cardNumber = input.nextInt();
-        System.out.println("Enter a number from 1 - 4 for selecting a suit" + 
-                       "\n 1:- Diamonds \n2:- Clubs \n3:- Spades \n4:- Hearts");
-        int suitNumber = input.nextInt();
-        
-        
-        
-        String cardSuit;
-        
-        switch (suitNumber) {
-        case 1:
-            cardSuit = "Clubs";
-            break;
-        case 2:
-            cardSuit = "Diamonds";
-            break;
-        case 3:
-            cardSuit = "Hearts";
-            break;
-        default:
-            cardSuit = "Spades";
-            break;
-        }
+        System.out.println("Enter a suit from the following:- " + 
+                       "\n1:- Diamonds \n2:- Clubs \n3:- Spades \n4:- Hearts");
+        String cardSuit = input.next();
         
         Card key = new Card();
         key.setValue(cardNumber);
         key.setSuits(cardSuit);
         
+        
+        
+        //printing user response
         System.out.println("Your card is " + cardNumber + " of " + cardSuit);
         
         //step 3: match with array
+        
         boolean found = false;
         for (int i = 0; i < magicHand.length; i++) {
             
@@ -80,7 +68,7 @@ public class CardTrickICE1 {
             }
         }
         if (!found){
-            System.out.println("Card is not found in the magic hand");
+            System.out.println("Sorry, no match");
         }
             
         
