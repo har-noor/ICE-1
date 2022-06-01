@@ -60,7 +60,7 @@ public class Card
     //method for suits
     public  String selectRandomCardSuit(String [] SUITS) {
         Random generator = new Random();
-        int num = Math.abs(generator.nextInt(SUITS.length));
+        int num = Math.abs(generator.nextInt(SUITS.length) + 1);
         return SUITS[num];
     }
      
