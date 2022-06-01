@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package cardtrickice1;
+import java.util.Random;
 
 /** define card value and suits
  * 
@@ -51,35 +52,19 @@ public class Card
         
         
    //number
-    private int selectRandomCardNumber()   {
+    public  int selectRandomCardNumber()   {
         int cardNumber = (int) (Math.random() * 13);
         return cardNumber;
         }
-        
     
     //method for suits
-     private String selectRandomCardSuit() {
-        String cardSuit;
-        int s = (int) (Math.random() * 4);
-        switch (s) {
-        case 1:
-            cardSuit = "Clubs";
-            break;
-        case 2:
-            cardSuit = "Diamonds";
-            break;
-        case 3:
-            cardSuit = "Hearts";
-            break;
-        case 4 :
-            cardSuit = "Spades";
-            break;
-        default :
-            cardSuit = "Enter a valid number";
-            break;
-        
-        
-        }
-        return cardSuit;
-     }
+    public  String selectRandomCardSuit(String [] SUITS) {
+        Random generator = new Random();
+        int num = Math.abs(generator.nextInt(SUITS.length));
+        return SUITS[num];
+    }
+     
+    
+     
+     
 }
