@@ -70,6 +70,11 @@ public class CardTrickICE1 {
         if (!found){
             System.out.println("Sorry, no match");
         }
+        
+        //(hard-code) Card Object
+        Card luckyCard = new Card();
+        luckyCard.setValue(12);
+        luckyCard.setSuits("spades");
             
         
     }
