@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package cardtrickice1;
-import java.util.Random;
 
 /** define card value and suits
  * 
@@ -18,9 +17,9 @@ public class Card
     private int value;
     private String suits; //encapsulation
     //constant
-    public static final String [] SUITS = {"diamonds","clubs","spades","hearts"};
-    
-
+    public static final String [] SUITS = {"diamonds", "hearts", "spades", "clubs"};
+   
+  
 
     /**
      * @return the value
@@ -49,20 +48,17 @@ public class Card
     public void setSuits(String suits) {
         this.suits = suits;
     }
-        
-        
-   //number
-    public  int selectRandomCardNumber()   {
-        int cardNumber = (int) (Math.random() * 13);
-        return cardNumber;
-        }
-    
-    //method for suits
-    public  String selectRandomCardSuit(String [] SUITS) {
-        Random generator = new Random();
-        int num = Math.abs(generator.nextInt(SUITS.length) + 1);
-        return SUITS[num];
+    @Override
+    public String toString(){
+        return   value + " of " + suits;
     }
+   
+   
+   
+   
+    
+      	
+    
      
     
      
