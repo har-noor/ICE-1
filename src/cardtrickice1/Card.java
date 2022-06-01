@@ -9,13 +9,17 @@ package cardtrickice1;
  * 
  *
  * @author sivagamasrinivasan
+ * modifier: Harnoor Kaur (Student ID: 991662978)
+ * Date modified: May 29, 2022
  */
 public class Card 
 {
     private int value;
     private String suits; //encapsulation
     //constant
-    public static final String [] SUITS = { "diamonds","clubs","spades","hearts"};
+    public static final String [] SUITS = {"diamonds", "hearts", "spades", "clubs"};
+   
+  
 
     /**
      * @return the value
@@ -44,8 +48,19 @@ public class Card
     public void setSuits(String suits) {
         this.suits = suits;
     }
-   //number
+    @Override
+    public String toString(){
+        return   value + " of " + suits;
+    }
+   
+   
+   
+   
     
-    //method for suits
+      	
     
+     
+    
+     
+     
 }
